@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реферальный проект</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем библиотеку для работы с блокчейном -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Реферальный Проект</h1>
+            <div class="wallet-section">
+                <button id="connectWalletBtn">🔗 Подключить MetaMask</button>
+                <p id="walletStatus">Статус: Не подключен</p>
+                <p id="walletAddress">Адрес: ---</p>
+                <p id="ethBalance">Баланс ETH: ---</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Секция 1: Регистрация и оплата (для новых пользователей) -->
+            <section class="card" id="registrationSection" style="display:none;">
+                <h2>📝 Вступить в проект</h2>
+                <p>Стоимость вступления: <strong id="entryPrice">Загрузка...</strong> ETH</p>
+                <div class="form-group">
+                    <label for="referrerInput">Адрес пригласившего (если есть):</label>
+                    <input type="text" id="referrerInput" placeholder="0x...">
+                    <small>Оставьте пустым, если у вас нет реферального кода.</small>
+                </div>
+                <button id="registerBtn" class="btn-primary">💎 Оплатить и зарегистрироваться</button>
+                <p id="registerStatus"></p>
+            </section>
+
+            <!-- Секция 2: Статистика и реферальная ссылка (для зарегистрированных) -->
+            <section class="card" id="dashboardSection" style="display:none;">
+                <h2>📊 Ваш кабинет</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">Уровень</span>
+                        <span class="stat-value" id="userLevel">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Внутренний баланс</span>
+                        <span class="stat-value" id="internalBalance">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Прямые рефералы</span>
+                        <span class="stat-value" id="totalDirectReferrals">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Рефералы на уровне</span>
+                        <span class="stat-value" id="referralsInLevel">0</span>
+                    </div>
+                </div>
+
+                <h3>👥 Ваша реферальная ссылка</h3>
+                <div class="referral-link-box">
+                    <input type="text" id="referralLinkOutput" readonly>
+                    <button id="copyLinkBtn">📋 Копировать</button>
+                </div>
+                <p class="info-text">Отправьте эту ссылку друзьям. При их регистрации вы получите вознаграждение.</p>
+
+                <h3>📈 Пороги уровней</h3>
+                <ul id="levelsList">
+                    <!-- Список уровней загрузится из контракта -->
+                </ul>
+            </section>
+
+            <!-- Уведомления -->
+            <div id="notification" class="notification"></div>
+        </main>
+    </div>
+
+    <!-- Подключаем скрипты -->
+    <script>
+        // ВАЖНО: ЗАМЕНИТЕ ЭТОТ АДРЕС НА АДРЕС ВАШЕГО КОНТРАКТА!
+        const CONTRACT_ADDRESS = "0x137cbBBb38962ABd3A3a0D212C1f408FBD92ffb8";
+    </script>
+    <script src="contractABI.json"></script> <!-- Ваш ABI будет загружен отсюда -->
+    <script src="app.js"></script>
+</body>
+</html>
