@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+h1 {
+    color: #2d3748;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.wallet-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+#connectWalletBtn {
+    background: linear-gradient(90deg, #f6a823, #f7931a);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+#connectWalletBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(247, 147, 26, 0.2);
+}
+
+#walletStatus {
+    font-weight: bold;
+    color: #4a5568;
+    margin: 5px 0;
+}
+
+#walletAddress, #ethBalance {
+    font-family: 'Courier New', monospace;
+    background: #edf2f7;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 5px 0;
+    word-break: break-all;
+    font-size: 0.9rem;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2, h3 {
+    color: #2d3748;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #f6a823;
+    outline: none;
+}
+
+small {
+    color: #718096;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4299e1, #3182ce);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #3182ce, #2c5282);
+    box-shadow: 0 7px 14px rgba(66, 153, 225, 0.2);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #cbd5e0;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2d3748;
+    display: block;
+}
+
+.referral-link-box {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#referralLinkOutput {
+    flex-grow: 1;
+    background: #f7fafc;
+    font-family: 'Courier New', monospace;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px dashed #cbd5e0;
+}
+
+#copyLinkBtn {
+    background: #48bb78;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+#copyLinkBtn:hover {
+    background: #38a169;
+}
+
+.info-text {
+    background: #ebf8ff;
+    color: #2c5282;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #4299e1;
+    margin: 20px 0;
+}
+
+#levelsList {
+    list-style: none;
+    padding: 0;
+}
+
+#levelsList li {
+    background: #f7fafc;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #f6a823;
+    font-weight: 500;
+}
+
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2d3748;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    max-width: 350px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .referral-link-box {
+        flex-direction: column;
+    }
+}
